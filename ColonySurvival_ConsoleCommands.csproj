@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyName>ColonySurvival_ConsoleCommands</AssemblyName>
+    <Description>Colony Survival Console Commands</Description>
+    <Version>1.0.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.Unity" Version="6.0.0-*" IncludeAssets="compile" />
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" />
+	<PackageReference Include="UnityEngine.Modules" Version="2021.3.14" IncludeAssets="compile" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+    <Reference Include="game_assembly">
+		  <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Colony Survival\colonyclient_Data\Managed\Assembly-CSharp.dll</HintPath>
+	  </Reference>
+    <Reference Include="text_assembly">
+		  <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Colony Survival\colonyclient_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+	  </Reference>
+    <Reference Include="text_assembly">
+		  <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Colony Survival\colonyclient_Data\Managed\UnityEngine.UI.dll</HintPath>
+	  </Reference>
+  </ItemGroup>
+</Project>
